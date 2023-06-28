@@ -153,9 +153,15 @@ public class ATM_Interface {
                                     System.out.println("Deposit Successfull");
                                     counter++;
                                 }
-                                else
+                                else if(check==0)
                                 {
                                     System.out.println("Deposit Cancelled");
+                                }
+                                else
+                                {
+                                    System.out.println("Invalid Input!!!");
+                                    System.out.println("Operation Cancelled");
+                                    System.out.println("Try again later!!!");
                                 }
                                 break;
                             case 3:
@@ -177,9 +183,15 @@ public class ATM_Interface {
                                         System.out.println("Insufficient Balance to Withdraw");
                                     }
                                 }
-                                else
+                                else if(check==0)
                                 {
                                     System.out.println("Withdraw Cancelled");
+                                }
+                                else
+                                {
+                                    System.out.println("Invalid Input!!!");
+                                    System.out.println("Operation Cancelled");
+                                    System.out.println("Try again later!!!");
                                 }
                                 break;
                             case 4:
@@ -211,9 +223,15 @@ public class ATM_Interface {
                                             System.out.println("Recipent BANK IFSC CODE = "+recipent_ifsc);
                                             counter++;
                                         }
-                                        else
+                                        else if(check==0)
                                         {
                                             System.out.println("Insufficient Balance to Transfer");
+                                        }
+                                        else
+                                        {
+                                            System.out.println("Invalid Input!!!");
+                                            System.out.println("Operation Cancelled");
+                                            System.out.println("Try again later!!!");
                                         }
                                     }
                                     else
@@ -227,9 +245,25 @@ public class ATM_Interface {
                                 }
                                 break;
                             case 5:
-                                System.out.println("LOGGED OUT Successfull");
-                                System.out.println("THANK YOU FOR BANKING WITH US!!!\nSEE YOU AGAIN NEXT TIME");
-                                return;
+                                System.out.println("Press '1' to Confirm LOGOUT or Press '0' to Cancel LOGOUT");
+                                check=sc.nextInt();
+                                if(check==1)
+                                {
+                                    System.out.println("LOGGED OUT Successfull");
+                                    System.out.println("THANK YOU FOR BANKING WITH US!!!\nSEE YOU AGAIN NEXT TIME");
+                                    return;
+                                }
+                                else if(check==0)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    System.out.println("Invalid Input!!!");
+                                    System.out.println("Operation Cancelled");
+                                    System.out.println("Try again later!!!");
+                                    break;
+                                }
                             default:
                                 System.out.println("Invalid Input!!!\nPlease Try again...");
                                 break;
